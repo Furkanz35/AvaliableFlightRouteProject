@@ -1,9 +1,0 @@
-/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/src/main/java/org/fzengin/app/route/application/swagger/SwaggerConfig.java
-/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/src/main/java/org/fzengin/app/route/application/controller/RouteAppValidRouteController.java
-/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/src/main/java/org/fzengin/app/route/application/config/LoggingAspect.java
-/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/src/main/java/org/fzengin/app/route/application/apiresponse/ApiResponse.java
-/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/src/main/java/org/fzengin/app/route/application/App.java
-/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/src/main/java/org/fzengin/app/route/application/controller/RouteAppTransportationController.java
-/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/src/main/java/org/fzengin/app/route/application/config/WebConfig.java
-/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/src/main/java/org/fzengin/app/route/application/controller/RouteAppLocationController.java
-/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/src/main/java/org/fzengin/app/route/application/exception/GlobalExceptionHandler.java
