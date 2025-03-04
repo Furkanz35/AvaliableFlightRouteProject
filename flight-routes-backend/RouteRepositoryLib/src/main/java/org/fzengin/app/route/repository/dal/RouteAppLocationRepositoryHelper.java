@@ -16,13 +16,23 @@ public class RouteAppLocationRepositoryHelper {
         this.locationRepository = locationRepository;
     }
 
-    public void saveLocation(Location location)
+    public Location saveLocation(Location location)
     {
         try {
-            locationRepository.save(location);
+           return locationRepository.save(location);
         }
         catch (Throwable ex) {
             throw new RepositoryException("RouteRepositoryHelper.saveLocation", ex);
+        }
+    }
+
+    public Optional<Location> findLocationById(Integer id)
+    {
+        try {
+            return locationRepository.findLocationById(id);
+        }
+        catch (Throwable ex) {
+            throw new RepositoryException("RouteRepositoryHelper.findLocationById", ex);
         }
     }
 
@@ -32,10 +42,19 @@ public class RouteAppLocationRepositoryHelper {
             return locationRepository.findLocationByNameIgnoreCase(locationName.toUpperCase());
         }
         catch (Throwable ex) {
-            throw new RepositoryException("RouteRepositoryHelper.findLocationByLocationName", ex);
+            throw new RepositoryException("RouteRepositoryHelper.findLocationByName", ex);
         }
     }
 
+    public List<Location> findLocationByNameOrLocationCode(String name, String locationCode)
+    {
+        try {
+            return locationRepository.findByNameOrLocationCode(name, locationCode);
+        }
+        catch (Throwable ex) {
+            throw new RepositoryException("RouteRepositoryHelper.findLocationByNameOrLocationCode", ex);
+        }
+    }
 
     public List<Location> findAllLocations()
     {
@@ -47,10 +66,10 @@ public class RouteAppLocationRepositoryHelper {
         }
     }
 
-    public boolean existsLocationByLocationName(String locationName)
+    public boolean existsLocationByLocationId(Integer id)
     {
         try {
-            return locationRepository.existsByNameIgnoreCase(locationName.toUpperCase());
+            return locationRepository.existsById(id);
         }
         catch (Throwable ex) {
             throw new RepositoryException("RouteRepositoryHelper.existsLocationByLocationName", ex);
@@ -58,13 +77,13 @@ public class RouteAppLocationRepositoryHelper {
     }
 
 
-    public void deleteLocationByLocationName(String locationName)
+    public void deleteLocationById(Integer id)
     {
         try {
-           locationRepository.deleteLocationByNameIgnoreCase(locationName.toUpperCase());
+           locationRepository.deleteLocationById(id);
         }
         catch (Throwable ex) {
-            throw new RepositoryException("RouteRepositoryHelper.deleteLocationByLocationName", ex);
+            throw new RepositoryException("RouteRepositoryHelper.deleteLocationById", ex);
         }
     }
 

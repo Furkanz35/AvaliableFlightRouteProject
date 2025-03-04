@@ -2,7 +2,7 @@ package org.fzengin.app.route.application.controller;
 
 import org.fzengin.app.route.application.apiresponse.ApiResponse;
 import org.fzengin.app.route.data.dto.ValidRouteDto;
-import org.fzengin.app.route.application.RouteAppValidRouteService;
+import org.fzengin.app.route.service.RouteAppValidRouteService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

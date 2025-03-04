@@ -134,8 +134,8 @@ const HomePage: React.FC = () => {
     try {
       const formattedDate = format(selectedDate, 'yyyy-MM-dd');
       const response = await validRouteService.findValidRoutes(
-        originLocation.name,
-        destinationLocation.name,
+        originLocation.id,
+        destinationLocation.id,
         formattedDate
       );
       
@@ -359,74 +359,78 @@ const HomePage: React.FC = () => {
                               Route {index + 1}
                             </Typography>
                             <Box sx={{ mt: 1 }}>
-                              {route.transportationDtoList.map((transport, tIndex) => (
-                                <Box 
-                                  key={transport.id}
-                                  sx={{ 
-                                    display: 'flex', 
-                                    flexDirection: 'column',
-                                    mb: tIndex !== route.transportationDtoList.length - 1 ? 2 : 0,
-                                    position: 'relative',
-                                    pl: 4
-                                  }}
-                                >
-                                  {tIndex !== route.transportationDtoList.length - 1 && (
-                                    <Box
-                                      sx={{
-                                        position: 'absolute',
-                                        left: '12px',
-                                        top: '24px',
-                                        bottom: '-12px',
-                                        width: '2px',
-                                        bgcolor: 'primary.main',
-                                        opacity: 0.3
-                                      }}
-                                    />
-                                  )}
-                                  <Box sx={{ 
-                                    display: 'flex', 
-                                    alignItems: 'center',
-                                    gap: 2,
-                                    position: 'relative'
-                                  }}>
-                                    <Box
-                                      sx={{
-                                        width: 32,
-                                        height: 32,
-                                        borderRadius: '50%',
-                                        bgcolor: 'primary.main',
-                                        position: 'absolute',
-                                        left: -32,
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: 'white',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold'
-                                      }}
-                                    >
-                                      {tIndex + 1}
-                                    </Box>
-                                    <Box sx={{ flex: 1 }}>
-                                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                                        <Typography variant="subtitle1" sx={{ fontWeight: 500, fontSize: '1rem' }}>
-                                          {transport.originLocation} → {transport.destinationLocation}
-                                        </Typography>
-                                        <Chip
-                                          label={transport.transportationType}
-                                          size="small"
-                                          color="primary"
-                                          sx={{ 
-                                            fontWeight: 500,
-                                            bgcolor: 'primary.main',
-                                            color: 'white'
-                                          }}
-                                        />
+                              {route.transportationDtoList.map((transport, tIndex) => {
+                                const originLocation = locations.find(loc => loc.id === transport.originLocationId);
+                                const destinationLocation = locations.find(loc => loc.id === transport.destinationLocationId);
+                                return (
+                                  <Box 
+                                    key={transport.id}
+                                    sx={{ 
+                                      display: 'flex', 
+                                      flexDirection: 'column',
+                                      mb: tIndex !== route.transportationDtoList.length - 1 ? 2 : 0,
+                                      position: 'relative',
+                                      pl: 4
+                                    }}
+                                  >
+                                    {tIndex !== route.transportationDtoList.length - 1 && (
+                                      <Box
+                                        sx={{
+                                          position: 'absolute',
+                                          left: '12px',
+                                          top: '24px',
+                                          bottom: '-12px',
+                                          width: '2px',
+                                          bgcolor: 'primary.main',
+                                          opacity: 0.3
+                                        }}
+                                      />
+                                    )}
+                                    <Box sx={{ 
+                                      display: 'flex', 
+                                      alignItems: 'center',
+                                      gap: 2,
+                                      position: 'relative'
+                                    }}>
+                                      <Box
+                                        sx={{
+                                          width: 32,
+                                          height: 32,
+                                          borderRadius: '50%',
+                                          bgcolor: 'primary.main',
+                                          position: 'absolute',
+                                          left: -32,
+                                          display: 'flex',
+                                          alignItems: 'center',
+                                          justifyContent: 'center',
+                                          color: 'white',
+                                          fontSize: '16px',
+                                          fontWeight: 'bold'
+                                        }}
+                                      >
+                                        {tIndex + 1}
+                                      </Box>
+                                      <Box sx={{ flex: 1 }}>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                                          <Typography variant="subtitle1" sx={{ fontWeight: 500, fontSize: '1rem' }}>
+                                            {originLocation?.name || 'Unknown'} → {destinationLocation?.name || 'Unknown'}
+                                          </Typography>
+                                          <Chip
+                                            label={transport.transportationType}
+                                            size="small"
+                                            color="primary"
+                                            sx={{ 
+                                              fontWeight: 500,
+                                              bgcolor: 'primary.main',
+                                              color: 'white'
+                                            }}
+                                          />
+                                        </Box>
                                       </Box>
                                     </Box>
                                   </Box>
-                                </Box>
-                              ))}
+                                );
+                              })}
                             </Box>
                           </CardContent>
                         </Card>

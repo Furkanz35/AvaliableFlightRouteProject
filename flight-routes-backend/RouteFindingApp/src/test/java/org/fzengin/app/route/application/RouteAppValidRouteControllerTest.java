@@ -2,6 +2,9 @@ package org.fzengin.app.route.application;
 
 import org.fzengin.app.route.data.dto.LocationDto;
 import org.fzengin.app.route.data.dto.TransportationDto;
+import org.fzengin.app.route.data.dto.enums.TransportationType;
+import org.fzengin.app.route.service.RouteAppLocationDataService;
+import org.fzengin.app.route.service.RouteAppTransportationDataService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 @TestPropertySource(locations = "classpath:application-test.properties")
 class RouteAppValidRouteControllerTest {
+
+    public static final String ADB = "ADNAN MENDERES";
+
+    public static final String SAW = "SABIHA GOKCEN";
+
+    public static final String TAKSIM = "TAKSIM";
+
+    public static final String KSK = "KARSIYAKA";
 
     @Autowired
     private MockMvc mockMvc;
@@ -51,15 +62,15 @@ class RouteAppValidRouteControllerTest {
                 .andExpect(jsonPath("$.message").value("Valid routes were found."))
                 .andExpect(jsonPath("$.data").isArray())
                 .andExpect(jsonPath("$.data[0].transportationDtoList").isArray())
-                .andExpect(jsonPath("$.data[0].transportationDtoList[0].originLocation").value("KARSIYAKA"))
-                .andExpect(jsonPath("$.data[0].transportationDtoList[0].destinationLocation").value("ADNAN MENDERES HAVAALANI"))
-                .andExpect(jsonPath("$.data[0].transportationDtoList[0].transportationType").value("BUS"))
-                .andExpect(jsonPath("$.data[0].transportationDtoList[1].originLocation").value("ADNAN MENDERES HAVAALANI"))
-                .andExpect(jsonPath("$.data[0].transportationDtoList[1].destinationLocation").value("SABIHA GOKCEN HAVAALANI"))
-                .andExpect(jsonPath("$.data[0].transportationDtoList[1].transportationType").value("FLIGHT"))
-                .andExpect(jsonPath("$.data[0].transportationDtoList[2].originLocation").value("SABIHA GOKCEN HAVAALANI"))
-                .andExpect(jsonPath("$.data[0].transportationDtoList[2].destinationLocation").value("TAKSIM"))
-                .andExpect(jsonPath("$.data[0].transportationDtoList[2].transportationType").value("BUS"))
+                .andExpect(jsonPath("$.data[0].transportationDtoList[0].originLocationName").value(KSK))
+                .andExpect(jsonPath("$.data[0].transportationDtoList[0].destinationLocationName").value(ADB))
+                .andExpect(jsonPath("$.data[0].transportationDtoList[0].transportationType").value(TransportationType.SUBWAY.name()))
+                .andExpect(jsonPath("$.data[0].transportationDtoList[1].originLocationName").value(ADB))
+                .andExpect(jsonPath("$.data[0].transportationDtoList[1].destinationLocationName").value(SAW))
+                .andExpect(jsonPath("$.data[0].transportationDtoList[1].transportationType").value(TransportationType.FLIGHT.name()))
+                .andExpect(jsonPath("$.data[0].transportationDtoList[2].originLocationName").value(SAW))
+                .andExpect(jsonPath("$.data[0].transportationDtoList[2].destinationLocationName").value(TAKSIM))
+                .andExpect(jsonPath("$.data[0].transportationDtoList[2].transportationType").value(TransportationType.UBER.name()))
                 .andExpect(jsonPath("$.data.length()").value(1));
     }
 
@@ -78,75 +89,44 @@ class RouteAppValidRouteControllerTest {
     }
 
     private void saveTransportationsToInMemoryDb() {
-        TransportationDto flightFromSawToAdb = new TransportationDto();
-        flightFromSawToAdb.setTransportationType("FLIGHT");
-        flightFromSawToAdb.setDestinationLocation("ADNAN MENDERES HAVAALANI");
-        flightFromSawToAdb.setOriginLocation("SABIHA GOKCEN HAVAALANI");
-        flightFromSawToAdb.setOperationDays(Set.of(1, 2, 4, 5, 7));
+        LocationDto adnanMenderes = locationDataService.findLocationByLocationName(ADB).orElse(null);
+        LocationDto sabihaGokcen = locationDataService.findLocationByLocationName(SAW).orElse(null);
+        LocationDto karsiyaka = locationDataService.findLocationByLocationName(KSK).orElse(null);
+        LocationDto taksim = locationDataService.findLocationByLocationName(TAKSIM).orElse(null);
 
-        TransportationDto flightFromAdbToSaw = new TransportationDto();
-        flightFromAdbToSaw.setTransportationType("FLIGHT");
-        flightFromAdbToSaw.setDestinationLocation("SABIHA GOKCEN HAVAALANI");
-        flightFromAdbToSaw.setOriginLocation("ADNAN MENDERES HAVAALANI");
-        flightFromAdbToSaw.setOperationDays(Set.of(1, 4, 7));
+        assert adnanMenderes != null;
+        assert sabihaGokcen != null;
+        assert karsiyaka != null;
+        assert taksim != null;
 
-        TransportationDto busFromTaksimToKarsiyaka = new TransportationDto();
-        busFromTaksimToKarsiyaka.setTransportationType("BUS");
-        busFromTaksimToKarsiyaka.setDestinationLocation("TAKSIM");
-        busFromTaksimToKarsiyaka.setOriginLocation("KARSIYAKA");
-        busFromTaksimToKarsiyaka.setOperationDays(Set.of(1, 2, 4, 5, 7));
 
-        TransportationDto busFromSawToTaksim = new TransportationDto();
-        busFromSawToTaksim.setTransportationType("BUS");
-        busFromSawToTaksim.setDestinationLocation("TAKSIM");
-        busFromSawToTaksim.setOriginLocation("SABIHA GOKCEN HAVAALANI");
-        busFromSawToTaksim.setOperationDays(Set.of(1, 2, 4, 5, 7));
-
-        TransportationDto busFromKarsiyakaToAdb = new TransportationDto();
-        busFromKarsiyakaToAdb.setTransportationType("BUS");
-        busFromKarsiyakaToAdb.setDestinationLocation("ADNAN MENDERES HAVAALANI");
-        busFromKarsiyakaToAdb.setOriginLocation("KARSIYAKA");
-        busFromKarsiyakaToAdb.setOperationDays(Set.of(1, 2, 3, 4, 5, 6, 7));
-
-        TransportationDto busFromKarsiyakaToTaksim = new TransportationDto();
-        busFromKarsiyakaToTaksim.setTransportationType("BUS");
-        busFromKarsiyakaToTaksim.setDestinationLocation("KARSIYAKA");
-        busFromKarsiyakaToTaksim.setOriginLocation("TAKSIM");
-        busFromKarsiyakaToTaksim.setOperationDays(Set.of(1, 2, 3, 4, 5, 6, 7));
+        TransportationDto flightFromSawToAdb = new TransportationDto(sabihaGokcen.getId(), adnanMenderes.getId(), TransportationType.FLIGHT.name(),
+                Set.of(1, 2, 4, 5, 7));
+        TransportationDto flightFromAdbToSaw = new TransportationDto(adnanMenderes.getId(), sabihaGokcen.getId(), TransportationType.FLIGHT.name(),
+                Set.of(1, 4, 7));
+        TransportationDto busFromTaksimToKarsiyaka = new TransportationDto(taksim.getId(), karsiyaka.getId(), TransportationType.BUS.name(),
+                Set.of(1, 2, 3, 4, 5, 6, 7));
+        TransportationDto uberFromSawToTaksim = new TransportationDto(sabihaGokcen.getId(), taksim.getId(), TransportationType.UBER.name(),
+                Set.of(1, 2, 4, 5, 7));
+        TransportationDto subwayFromKarsiyakaToAdb = new TransportationDto(karsiyaka.getId(), adnanMenderes.getId(),
+                TransportationType.SUBWAY.name(), Set.of(1, 2, 3, 4, 5, 6, 7));
+        TransportationDto busFromKarsiyakaToTaksim = new TransportationDto(karsiyaka.getId(), taksim.getId(), TransportationType.BUS.name(),
+                Set.of(1, 2, 3, 4, 5, 6, 7));
 
         transportationDataService.saveTransportation(flightFromAdbToSaw);
         transportationDataService.saveTransportation(flightFromSawToAdb);
         transportationDataService.saveTransportation(busFromKarsiyakaToTaksim);
-        transportationDataService.saveTransportation(busFromSawToTaksim);
-        transportationDataService.saveTransportation(busFromKarsiyakaToAdb);
+        transportationDataService.saveTransportation(uberFromSawToTaksim);
+        transportationDataService.saveTransportation(subwayFromKarsiyakaToAdb);
         transportationDataService.saveTransportation(busFromTaksimToKarsiyaka);
 
     }
 
     private void saveLocationsToInMemoryDb() {
-        LocationDto sabihaGokcen = new LocationDto();
-        sabihaGokcen.setName("SABIHA GOKCEN HAVAALANI");
-        sabihaGokcen.setCountry("Turkey");
-        sabihaGokcen.setLocationCode("SAW");
-
-        LocationDto adnanMenderes = new LocationDto();
-        adnanMenderes.setName("ADNAN MENDERES HAVAALANI");
-        adnanMenderes.setCountry("Turkey");
-        adnanMenderes.setLocationCode("ADM");
-
-        LocationDto karsiyaka = new LocationDto();
-        karsiyaka.setName("KARSIYAKA");
-        karsiyaka.setCountry("Turkey");
-        karsiyaka.setLocationCode("KSK");
-
-        LocationDto taksim = new LocationDto();
-        taksim.setName("TAKSIM");
-        taksim.setCountry("Turkey");
-        taksim.setLocationCode("TKSMM");
-
-        locationDataService.saveLocation(sabihaGokcen);
-        locationDataService.saveLocation(adnanMenderes);
-        locationDataService.saveLocation(karsiyaka);
-        locationDataService.saveLocation(taksim);
+        String country = "TURKEY";
+        locationDataService.saveLocation(new LocationDto(SAW, country, "SAW"));
+        locationDataService.saveLocation(new LocationDto(ADB, country, "ADM"));
+        locationDataService.saveLocation(new LocationDto(KSK, country, "KSK"));
+        locationDataService.saveLocation(new LocationDto(TAKSIM, country, "TKSM"));
     }
 }

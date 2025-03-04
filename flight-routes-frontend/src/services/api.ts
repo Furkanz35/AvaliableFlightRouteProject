@@ -3,6 +3,7 @@ import axios, { AxiosError } from 'axios';
 const API_BASE_URL = 'http://localhost:8080/api/route';
 
 export interface Location {
+  id: number;
   name: string;
   country: string;
   locationCode: string;
@@ -10,8 +11,8 @@ export interface Location {
 
 export interface Transportation {
   id: number;
-  originLocation: string;
-  destinationLocation: string;
+  originLocationId: number;
+  destinationLocationId: number;
   transportationType: string;
   operationDays: number[];
 }
@@ -58,9 +59,9 @@ export const locationService = {
       throw error;
     }
   },
-  getByName: async (name: string) => {
+  getById: async (id: number) => {
     try {
-      const response = await api.get<ApiResponse<Location>>(`/location/get/${name}`);
+      const response = await api.get<ApiResponse<Location>>(`/location/get/${id}`);
       return response;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -80,9 +81,9 @@ export const locationService = {
       throw error;
     }
   },
-  update: async (name: string, location: Location) => {
+  update: async (id: number, location: Location) => {
     try {
-      const response = await api.put<ApiResponse<Location>>(`/location/update/${name}`, location);
+      const response = await api.put<ApiResponse<Location>>(`/location/update/${id}`, location);
       return response;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -91,9 +92,9 @@ export const locationService = {
       throw error;
     }
   },
-  delete: async (name: string) => {
+  delete: async (id: number) => {
     try {
-      const response = await api.delete<ApiResponse<void>>(`/location/delete/${name}`);
+      const response = await api.delete<ApiResponse<void>>(`/location/delete/${id}`);
       return response;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -154,8 +155,19 @@ export const transportationService = {
 
 // Valid routes endpoint
 export const validRouteService = {
-  findValidRoutes: async (originLocationName: string, destinationLocationName: string, date: string) => {
+  findValidRoutes: async (originLocationId: number, destinationLocationId: number, date: string) => {
     try {
+      // Önce lokasyon isimlerini bulalım
+      const originResponse = await locationService.getById(originLocationId);
+      const destinationResponse = await locationService.getById(destinationLocationId);
+
+      if (!originResponse.data.success || !destinationResponse.data.success) {
+        throw new Error('Location not found');
+      }
+
+      const originLocationName = originResponse.data.data.name;
+      const destinationLocationName = destinationResponse.data.data.name;
+
       const response = await api.get<ApiResponse<ValidRoute[]>>('/get', {
         params: {
           originLocationName,

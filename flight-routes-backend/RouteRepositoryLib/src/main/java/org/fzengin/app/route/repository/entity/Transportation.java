@@ -18,7 +18,7 @@ public class Transportation {
     @JoinColumn(name = "origin_location_id")
     private Location originLocation;
 
-    @Column(name = "transportation_type" , nullable = false, length = 50)
+    @Column(name = "transportation_type" , nullable = false, length = 25)
     private String transportationType;
 
     @Column(name = "operating_day_bit_mask" , nullable = false)

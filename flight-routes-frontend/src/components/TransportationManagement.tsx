@@ -58,8 +58,8 @@ const TransportationManagement: React.FC<TransportationManagementProps> = ({
   const [editingTransportation, setEditingTransportation] = useState<Transportation | null>(null);
   const [formData, setFormData] = useState<Transportation>({
     id: 0,
-    originLocation: '',
-    destinationLocation: '',
+    originLocationId: 0,
+    destinationLocationId: 0,
     transportationType: '',
     operationDays: []
   });
@@ -87,8 +87,8 @@ const TransportationManagement: React.FC<TransportationManagementProps> = ({
       setEditingTransportation(null);
       setFormData({
         id: 0,
-        originLocation: '',
-        destinationLocation: '',
+        originLocationId: 0,
+        destinationLocationId: 0,
         transportationType: '',
         operationDays: []
       });
@@ -101,8 +101,8 @@ const TransportationManagement: React.FC<TransportationManagementProps> = ({
     setEditingTransportation(null);
     setFormData({
       id: 0,
-      originLocation: '',
-      destinationLocation: '',
+      originLocationId: 0,
+      destinationLocationId: 0,
       transportationType: '',
       operationDays: []
     });
@@ -167,43 +167,36 @@ const TransportationManagement: React.FC<TransportationManagementProps> = ({
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>ID</TableCell>
               <TableCell>Departure</TableCell>
               <TableCell>Arrival</TableCell>
-              <TableCell>Transportation Type</TableCell>
+              <TableCell>Type</TableCell>
               <TableCell>Operation Days</TableCell>
               <TableCell align="right">Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {transportations.map((transportation) => (
-              <TableRow key={transportation.id}>
-                <TableCell>{transportation.id}</TableCell>
-                <TableCell>{transportation.originLocation}</TableCell>
-                <TableCell>{transportation.destinationLocation}</TableCell>
-                <TableCell>{transportation.transportationType}</TableCell>
-                <TableCell>
-                  <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
-                    {transportation.operationDays.map((day) => (
-                      <Chip
-                        key={day}
-                        label={getDayLabel(day)}
-                        size="small"
-                        variant="outlined"
-                      />
-                    ))}
-                  </Box>
-                </TableCell>
-                <TableCell align="right">
-                  <IconButton onClick={() => handleOpenDialog(transportation)} color="primary">
-                    <EditIcon />
-                  </IconButton>
-                  <IconButton onClick={() => handleDelete(transportation.id)} color="error">
-                    <DeleteIcon />
-                  </IconButton>
-                </TableCell>
-              </TableRow>
-            ))}
+            {transportations.map((transportation) => {
+              const originLocation = locations.find(loc => loc.id === transportation.originLocationId);
+              const destinationLocation = locations.find(loc => loc.id === transportation.destinationLocationId);
+              return (
+                <TableRow key={transportation.id}>
+                  <TableCell>{originLocation?.name || 'Unknown'}</TableCell>
+                  <TableCell>{destinationLocation?.name || 'Unknown'}</TableCell>
+                  <TableCell>{transportation.transportationType}</TableCell>
+                  <TableCell>
+                    {transportation.operationDays.map(day => DAYS.find(d => d.value === day)?.label).join(', ')}
+                  </TableCell>
+                  <TableCell align="right">
+                    <IconButton onClick={() => handleOpenDialog(transportation)} color="primary">
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton onClick={() => handleDelete(transportation.id)} color="error">
+                      <DeleteIcon />
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
           </TableBody>
         </Table>
       </TableContainer>
@@ -217,8 +210,8 @@ const TransportationManagement: React.FC<TransportationManagementProps> = ({
             <Autocomplete
               options={locations}
               getOptionLabel={(option) => option.name}
-              value={locations.find(loc => loc.name === formData.originLocation) || null}
-              onChange={(_, newValue) => handleInputChange('originLocation', newValue?.name || '')}
+              value={locations.find(loc => loc.id === formData.originLocationId) || null}
+              onChange={(_, newValue) => handleInputChange('originLocationId', newValue?.id || 0)}
               renderInput={(params) => (
                 <TextField
                   {...params}
@@ -232,8 +225,8 @@ const TransportationManagement: React.FC<TransportationManagementProps> = ({
             <Autocomplete
               options={locations}
               getOptionLabel={(option) => option.name}
-              value={locations.find(loc => loc.name === formData.destinationLocation) || null}
-              onChange={(_, newValue) => handleInputChange('destinationLocation', newValue?.name || '')}
+              value={locations.find(loc => loc.id === formData.destinationLocationId) || null}
+              onChange={(_, newValue) => handleInputChange('destinationLocationId', newValue?.id || 0)}
               renderInput={(params) => (
                 <TextField
                   {...params}

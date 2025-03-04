@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class LocationDto {
+    private Integer id;
+
     @NotBlank(message = "Location name can not be empty")
     @Size(min = 2, max = 100, message = "Location name must be between 2 and 100 characters")
     private String name;
@@ -29,7 +31,6 @@ public class LocationDto {
         return country;
     }
 
-
     public void setCountry(String country) {
         this.country = country;
     }
@@ -42,16 +43,38 @@ public class LocationDto {
         this.locationCode = locationCode;
     }
 
+    public LocationDto(String name, String country, String locationCode) {
+        this.name = name;
+        this.country = country;
+        this.locationCode = locationCode;
+    }
+
+    public LocationDto(Integer id, String name, String country, String locationCode) {
+        this(name, country, locationCode);
+        this.id = id;
+    }
+
+    public LocationDto() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LocationDto that = (LocationDto) o;
-        return Objects.equals(name, that.name) && Objects.equals(country, that.country) && Objects.equals(locationCode, that.locationCode);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(country, that.country) && Objects.equals(locationCode, that.locationCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, country, locationCode);
+        return Objects.hash(id, name, country, locationCode);
     }
 }

@@ -30,6 +30,7 @@ const LocationManagement: React.FC = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [editingLocation, setEditingLocation] = useState<Location | null>(null);
   const [formData, setFormData] = useState<Location>({
+    id: 0,
     name: '',
     country: '',
     locationCode: ''
@@ -59,7 +60,7 @@ const LocationManagement: React.FC = () => {
       setFormData(location);
     } else {
       setEditingLocation(null);
-      setFormData({ name: '', country: '', locationCode: '' });
+      setFormData({ id: 0, name: '', country: '', locationCode: '' });
     }
     setOpenDialog(true);
   };
@@ -67,7 +68,7 @@ const LocationManagement: React.FC = () => {
   const handleCloseDialog = () => {
     setOpenDialog(false);
     setEditingLocation(null);
-    setFormData({ name: '', country: '', locationCode: '' });
+    setFormData({ id: 0, name: '', country: '', locationCode: '' });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,7 +81,7 @@ const LocationManagement: React.FC = () => {
     try {
       setLoading(true);
       if (editingLocation) {
-        await locationService.update(editingLocation.name, formData);
+        await locationService.update(editingLocation.id, formData);
       } else {
         await locationService.create(formData);
       }
@@ -93,11 +94,11 @@ const LocationManagement: React.FC = () => {
     }
   };
 
-  const handleDelete = async (name: string) => {
+  const handleDelete = async (id: number) => {
     if (window.confirm('Are you sure you want to delete this location?')) {
       try {
         setLoading(true);
-        await locationService.delete(name);
+        await locationService.delete(id);
         await fetchLocations();
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred during deletion');
@@ -140,7 +141,7 @@ const LocationManagement: React.FC = () => {
           </TableHead>
           <TableBody>
             {locations.map((location) => (
-              <TableRow key={location.name}>
+              <TableRow key={location.id}>
                 <TableCell>{location.name}</TableCell>
                 <TableCell>{location.country}</TableCell>
                 <TableCell>{location.locationCode}</TableCell>
@@ -148,7 +149,7 @@ const LocationManagement: React.FC = () => {
                   <IconButton onClick={() => handleOpenDialog(location)} color="primary">
                     <EditIcon />
                   </IconButton>
-                  <IconButton onClick={() => handleDelete(location.name)} color="error">
+                  <IconButton onClick={() => handleDelete(location.id)} color="error">
                     <DeleteIcon />
                   </IconButton>
                 </TableCell>

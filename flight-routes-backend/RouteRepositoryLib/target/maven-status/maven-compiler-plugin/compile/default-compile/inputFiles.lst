@@ -1,0 +1,8 @@
+/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteRepositoryLib/src/main/java/org/fzengin/app/route/repository/entity/Location.java
+/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteRepositoryLib/src/main/java/org/fzengin/app/route/repository/LocationRepository.java
+/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteRepositoryLib/src/main/java/org/fzengin/app/route/repository/dal/RouteAppLocationRepositoryHelper.java
+/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteRepositoryLib/src/main/java/org/fzengin/app/route/repository/dal/RouteAppTransportationRepositoryHelper.java
+/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteRepositoryLib/src/main/java/org/fzengin/app/route/repository/exception/RepositoryException.java
+/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteRepositoryLib/src/main/java/org/fzengin/app/route/repository/TransportationRepository.java
+/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteRepositoryLib/src/main/java/org/fzengin/app/route/repository/exception/RepositoryExceptionType.java
+/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteRepositoryLib/src/main/java/org/fzengin/app/route/repository/entity/Transportation.java

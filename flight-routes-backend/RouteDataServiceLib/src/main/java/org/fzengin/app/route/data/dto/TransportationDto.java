@@ -2,21 +2,20 @@ package org.fzengin.app.route.data.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.Set;
 
 public class TransportationDto {
 
-    private int id = -1;
+    private Integer id;
 
-    @NotBlank(message = "Origin Location name can not be empty")
-    @Size(min = 2, max = 100, message = "Origin Location name must be between 2 and 100 characters")
-    private String originLocation;
+    @NotNull(message = "Origin Location Id can not be null")
+    private Integer originLocationId;
 
-    @NotBlank(message = "Destination Location name can not be empty")
-    @Size(min = 2, max = 100, message = "Destination Location name must be between 2 and 100 characters")
-    private String destinationLocation;
+    @NotNull(message = "Destination Location Id can not be null")
+    private Integer destinationLocationId;
 
     @NotBlank(message = "Transportation type can not be empty")
     private String transportationType;
@@ -24,29 +23,48 @@ public class TransportationDto {
     @NotEmpty(message = "Operation days can not be empty")
     private Set<Integer> operationDays;
 
+    private String originLocationName;
 
-    public int getId() {
-        return id;
+    private String destinationLocationName;
+
+    public TransportationDto(Integer originLocationId, Integer destinationLocationId, String transportationType, Set<Integer> operationDays) {
+        this.originLocationId = originLocationId;
+        this.destinationLocationId = destinationLocationId;
+        this.transportationType = transportationType;
+        this.operationDays = operationDays;
     }
 
-    public void setId(int id) {
+    public TransportationDto(Integer id, Integer originLocationId, Integer destinationLocationId, String transportationType,
+                             Set<Integer> operationDays) {
+        this(originLocationId, destinationLocationId, transportationType, operationDays);
         this.id = id;
     }
 
-    public String getOriginLocation() {
-        return originLocation;
+    public TransportationDto() {
     }
 
-    public void setOriginLocation(String originLocation) {
-        this.originLocation = originLocation;
+    public Integer getId() {
+        return id;
     }
 
-    public String getDestinationLocation() {
-        return destinationLocation;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setDestinationLocation(String destinationLocation) {
-        this.destinationLocation = destinationLocation;
+    public Integer getOriginLocationId() {
+        return originLocationId;
+    }
+
+    public void setOriginLocationId(Integer originLocationId) {
+        this.originLocationId = originLocationId;
+    }
+
+    public Integer getDestinationLocationId() {
+        return destinationLocationId;
+    }
+
+    public void setDestinationLocationId(Integer destinationLocationId) {
+        this.destinationLocationId = destinationLocationId;
     }
 
     public String getTransportationType() {
@@ -63,5 +81,21 @@ public class TransportationDto {
 
     public void setOperationDays(Set<Integer> operationDays) {
         this.operationDays = operationDays;
+    }
+
+    public String getOriginLocationName() {
+        return originLocationName;
+    }
+
+    public void setOriginLocationName(String originLocationName) {
+        this.originLocationName = originLocationName;
+    }
+
+    public String getDestinationLocationName() {
+        return destinationLocationName;
+    }
+
+    public void setDestinationLocationName(String destinationLocationName) {
+        this.destinationLocationName = destinationLocationName;
     }
 }

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.fzengin.app.route.application.ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.613 s -- in org.fzengin.app.route.application.ApplicationTests

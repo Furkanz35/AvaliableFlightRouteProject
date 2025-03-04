@@ -1,10 +1,10 @@
 package org.fzengin.app.route.application.controller;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotNull;
+import org.fzengin.app.route.service.RouteAppLocationDataService;
 import org.fzengin.app.route.application.apiresponse.ApiResponse;
 import org.fzengin.app.route.data.dto.LocationDto;
-import org.fzengin.app.route.application.RouteAppLocationDataService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,21 +22,20 @@ public class RouteAppLocationController {
 
     @PostMapping("/save")
     public ResponseEntity<ApiResponse<LocationDto>> saveLocation(@Valid @RequestBody LocationDto locationDto) {
-        boolean isRecordedLocation = routeAppLocationDataService.existsLocationByLocationName(locationDto.getName());
+        boolean isRecordedLocation = routeAppLocationDataService.existsLocationByLocationId(locationDto.getId());
         if (!isRecordedLocation) {
-            routeAppLocationDataService.saveLocation(locationDto);
-            return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<>(true, "Location saved successfully", locationDto));
+            LocationDto savedLocation = routeAppLocationDataService.saveLocation(locationDto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<>(true, "Location saved successfully", savedLocation));
         } else {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiResponse<>(false, "Location already exists"));
         }
     }
 
-    @GetMapping("/get/{locationName}")
-    public ResponseEntity<ApiResponse<LocationDto>> getLocation(@PathVariable @Size(min = 2, message = "Location name must be at " + "least 2 " +
-            "characters") String locationName) {
-        LocationDto locationDto = routeAppLocationDataService.findLocationByLocationName(locationName).orElse(null);
+    @GetMapping("/get/{id}")
+    public ResponseEntity<ApiResponse<LocationDto>> getLocation(@PathVariable @NotNull(message = "Id can not be null") Integer id) {
+        LocationDto locationDto = routeAppLocationDataService.findLocationById(id).orElse(null);
         return locationDto == null ? ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse<>(false, "Location not found")) :
-                ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<>(true, "Get " + locationName, locationDto));
+                ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<>(true, "Location found", locationDto));
     }
 
     @GetMapping("/get/all")
@@ -46,31 +45,26 @@ public class RouteAppLocationController {
                 ResponseEntity.ok(new ApiResponse<>(true, "Locations found", locations));
     }
 
-    @DeleteMapping("/delete/{locationName}")
-    public ResponseEntity<ApiResponse<LocationDto>> deleteLocation(@PathVariable @Size(min = 2, message =
-            "Location name must be at least 2 characters") String locationName) {
-        boolean locationNotFound = routeAppLocationDataService.findLocationByLocationName(locationName).isEmpty();
-        if (locationNotFound) {
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<ApiResponse<LocationDto>> deleteLocation(@PathVariable @NotNull(message = "Id can not be null") Integer id) {
+        boolean isRecordedLocation = routeAppLocationDataService.existsLocationByLocationId(id);
+        if (!isRecordedLocation) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse<>(false, "Location not found"));
         } else {
-            routeAppLocationDataService.deleteLocationByName(locationName);
+            routeAppLocationDataService.deleteLocationById(id);
             return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<>(true, "Location deleted successfully"));
         }
     }
 
-    @PutMapping("/update/{locationName}")
-    public ResponseEntity<ApiResponse<LocationDto>> updateLocation(@PathVariable @Size(min = 2, message = "Location name must be at least 2 " +
-            "characters") String locationName, @Valid @RequestBody LocationDto locationDto) {
-        if (!locationName.equalsIgnoreCase(locationDto.getName())) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse<>(false,
-                    "Location name in the path and in the request body must be the same"));
-        }
-        boolean locationNotFound = routeAppLocationDataService.findLocationByLocationName(locationName).isEmpty();
-        if (locationNotFound) {
+    @PutMapping("/update/{id}")
+    public ResponseEntity<ApiResponse<LocationDto>> updateLocation(@PathVariable @NotNull(message = "Id can not be null") Integer id,
+                                                                   @Valid @RequestBody LocationDto locationDto) {
+        boolean isRecordedLocation = routeAppLocationDataService.existsLocationByLocationId(id);
+        if (!isRecordedLocation) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse<>(false, "Location not found"));
         } else {
-            routeAppLocationDataService.saveLocation(locationDto);
-            return ResponseEntity.ok().body(new ApiResponse<>(true, "Location updated successfully", locationDto));
+           LocationDto savedLocation = routeAppLocationDataService.saveLocation(locationDto);
+            return ResponseEntity.ok().body(new ApiResponse<>(true, "Location updated successfully", savedLocation));
         }
     }
 }

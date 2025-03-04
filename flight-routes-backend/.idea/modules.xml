@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RouteDataServiceLib/RouteDataServiceLib.iml" filepath="$PROJECT_DIR$/RouteDataServiceLib/RouteDataServiceLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RouteFindingApp/RouteFindingDataApp.iml" filepath="$PROJECT_DIR$/RouteFindingApp/RouteFindingDataApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RouteRepositoryLib/RouteRepositoryLib.iml" filepath="$PROJECT_DIR$/RouteRepositoryLib/RouteRepositoryLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/flight-routes-backend.iml" filepath="$PROJECT_DIR$/.idea/flight-routes-backend.iml" />
+    </modules>
+  </component>
+</project>

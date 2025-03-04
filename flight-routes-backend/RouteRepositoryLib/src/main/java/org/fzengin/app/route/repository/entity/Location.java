@@ -5,32 +5,29 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "locations")
+@Table(name = "locations",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"name", "location_code"})
+)
 public class Location implements Serializable {
     @Id
-    @Column(nullable = false, length = 512)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name", nullable = false, length = 100)
     private String name;
 
     @Basic
-    @Column(nullable = false, length = 512)
+    @Column(nullable = false, length = 100)
     private String country;
 
     @Basic
     @Column(name = "location_code", nullable = false, length = 10)
     private String locationCode;
-
-    @OneToMany(mappedBy = "originLocation", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Transportation> originTransportations = new ArrayList<>();
-
-    @OneToMany(mappedBy = "destinationLocation", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Transportation> destinationTransportations = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -56,6 +53,14 @@ public class Location implements Serializable {
         this.locationCode = locationCode;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @PrePersist
     @PreUpdate
     private void formatFields() {
@@ -72,7 +77,7 @@ public class Location implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(name);
+        return Objects.hashCode(id);
     }
 
     @Override
@@ -80,6 +85,6 @@ public class Location implements Serializable {
         if (this == other) return true;
         if (other == null || getClass() != other.getClass()) return false;
         Location location = (Location) other;
-        return Objects.equals(name, location.name);
+        return Objects.equals(id, location.id);
     }
 }

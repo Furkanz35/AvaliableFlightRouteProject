@@ -1,0 +1,8 @@
+org/fzengin/app/route/repository/exception/RepositoryException.class
+org/fzengin/app/route/repository/entity/Transportation.class
+org/fzengin/app/route/repository/dal/RouteAppTransportationRepositoryHelper.class
+org/fzengin/app/route/repository/TransportationRepository.class
+org/fzengin/app/route/repository/entity/Location.class
+org/fzengin/app/route/repository/exception/RepositoryExceptionType.class
+org/fzengin/app/route/repository/dal/RouteAppLocationRepositoryHelper.class
+org/fzengin/app/route/repository/LocationRepository.class

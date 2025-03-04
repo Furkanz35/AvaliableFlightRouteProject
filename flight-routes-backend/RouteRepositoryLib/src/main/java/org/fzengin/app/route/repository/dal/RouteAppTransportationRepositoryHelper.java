@@ -16,10 +16,10 @@ public class RouteAppTransportationRepositoryHelper {
     {
         this.transportationRepository = transportationRepository;
     }
-    public void saveTransportation(Transportation transportation)
+    public Transportation saveTransportation(Transportation transportation)
     {
         try {
-            transportationRepository.save(transportation);
+            return transportationRepository.save(transportation);
         }
         catch (Throwable throwable) {
             throw new RepositoryException("RouteRepositoryHelper.saveTransportation", throwable);
@@ -59,7 +59,7 @@ public class RouteAppTransportationRepositoryHelper {
     public void deleteTransportationById(Integer transportationId)
     {
         try {
-            transportationRepository.deleteTransportationById(transportationId);
+            transportationRepository.deleteById(transportationId);
         }
         catch (Throwable ex) {
             throw new RepositoryException("RouteRepositoryHelper.deleteTransportationById", ex);

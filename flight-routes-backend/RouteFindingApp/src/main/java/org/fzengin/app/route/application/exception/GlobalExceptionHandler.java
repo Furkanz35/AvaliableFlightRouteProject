@@ -2,6 +2,7 @@ package org.fzengin.app.route.application.exception;
 
 import jakarta.validation.ConstraintViolationException;
 import org.fzengin.app.route.application.apiresponse.ApiResponse;
+import org.fzengin.app.route.service.exception.DataServiceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

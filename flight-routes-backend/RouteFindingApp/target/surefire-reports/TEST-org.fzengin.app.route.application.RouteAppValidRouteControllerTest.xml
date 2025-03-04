@@ -1,0 +1,1544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.fzengin.app.route.application.RouteAppValidRouteControllerTest" time="1.719" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="19"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/target/test-classes:/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/target/classes:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.2/spring-boot-starter-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot/3.2.2/spring-boot-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-context/6.1.3/spring-context-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.2/spring-boot-autoconfigure-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.2/spring-boot-starter-logging-3.2.2.jar:/Users/furkanzengin/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/Users/furkanzengin/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/Users/furkanzengin/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/furkanzengin/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/furkanzengin/.m2/repository/org/slf4j/jul-to-slf4j/2.0.11/jul-to-slf4j-2.0.11.jar:/Users/furkanzengin/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-core/6.1.3/spring-core-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-jcl/6.1.3/spring-jcl-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.2/spring-boot-starter-web-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.2/spring-boot-starter-json-3.2.2.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.2/spring-boot-starter-tomcat-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.18/tomcat-embed-core-10.1.18.jar:/Users/furkanzengin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.18/tomcat-embed-el-10.1.18.jar:/Users/furkanzengin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.18/tomcat-embed-websocket-10.1.18.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-web/6.1.3/spring-web-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-beans/6.1.3/spring-beans-6.1.3.jar:/Users/furkanzengin/.m2/repository/io/micrometer/micrometer-observation/1.12.2/micrometer-observation-1.12.2.jar:/Users/furkanzengin/.m2/repository/io/micrometer/micrometer-commons/1.12.2/micrometer-commons-1.12.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-webmvc/6.1.3/spring-webmvc-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-expression/6.1.3/spring-expression-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.2/spring-boot-starter-test-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-test/3.2.2/spring-boot-test-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.2/spring-boot-test-autoconfigure-3.2.2.jar:/Users/furkanzengin/.m2/repository/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar:/Users/furkanzengin/.m2/repository/org/slf4j/slf4j-api/2.0.11/slf4j-api-2.0.11.jar:/Users/furkanzengin/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/furkanzengin/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/furkanzengin/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/furkanzengin/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/furkanzengin/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/furkanzengin/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/furkanzengin/.m2/repository/net/bytebuddy/byte-buddy/1.14.11/byte-buddy-1.14.11.jar:/Users/furkanzengin/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/furkanzengin/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/furkanzengin/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/furkanzengin/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/furkanzengin/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/furkanzengin/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/furkanzengin/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/furkanzengin/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/furkanzengin/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/furkanzengin/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/furkanzengin/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/furkanzengin/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.11/byte-buddy-agent-1.14.11.jar:/Users/furkanzengin/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/furkanzengin/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/furkanzengin/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/furkanzengin/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-test/6.1.3/spring-test-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/furkanzengin/.m2/repository/org/fzengin/RouteDataServiceLib/1.0.1/RouteDataServiceLib-1.0.1.jar:/Users/furkanzengin/.m2/repository/org/fzengin/RouteRepositoryLib/1.0.1/RouteRepositoryLib-1.0.1.jar:/Users/furkanzengin/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/furkanzengin/.m2/repository/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar:/Users/furkanzengin/.m2/repository/mysql/mysql-connector-java/8.0.28/mysql-connector-java-8.0.28.jar:/Users/furkanzengin/.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar:/Users/furkanzengin/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.0.Final/hibernate-validator-8.0.0.Final.jar:/Users/furkanzengin/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/Users/furkanzengin/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/furkanzengin/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.1.0/springdoc-openapi-starter-webmvc-ui-2.1.0.jar:/Users/furkanzengin/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.1.0/springdoc-openapi-starter-webmvc-api-2.1.0.jar:/Users/furkanzengin/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.1.0/springdoc-openapi-starter-common-2.1.0.jar:/Users/furkanzengin/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.9/swagger-core-jakarta-2.2.9.jar:/Users/furkanzengin/.m2/repository/org/apache/commons/commons-lang3/3.13.0/commons-lang3-3.13.0.jar:/Users/furkanzengin/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.9/swagger-annotations-jakarta-2.2.9.jar:/Users/furkanzengin/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.9/swagger-models-jakarta-2.2.9.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.3/jackson-dataformat-yaml-2.15.3.jar:/Users/furkanzengin/.m2/repository/org/webjars/swagger-ui/4.18.2/swagger-ui-4.18.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.2/spring-boot-starter-aop-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-aop/6.1.3/spring-aop-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar:/Users/furkanzengin/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.2/spring-boot-starter-data-jpa-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.2/spring-boot-starter-jdbc-3.2.2.jar:/Users/furkanzengin/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-jdbc/6.1.3/spring-jdbc-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.jar:/Users/furkanzengin/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/furkanzengin/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/furkanzengin/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/Users/furkanzengin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar:/Users/furkanzengin/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar:/Users/furkanzengin/.m2/repository/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar:/Users/furkanzengin/.m2/repository/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar:/Users/furkanzengin/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/furkanzengin/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/furkanzengin/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/furkanzengin/.m2/repository/org/springframework/data/spring-data-jpa/3.2.2/spring-data-jpa-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/data/spring-data-commons/3.2.2/spring-data-commons-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-orm/6.1.3/spring-orm-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-tx/6.1.3/spring-tx-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-aspects/6.1.3/spring-aspects-6.1.3.jar:/Users/furkanzengin/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/furkanzengin/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Istanbul"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="19"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="TR"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/target/surefire/surefirebooter-20250305021847071_3.jar /Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/target/surefire 2025-03-05T02-18-47_037-jvmRun1 surefire-20250305021847071_1tmp surefire_0-20250305021847071_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/target/test-classes:/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/target/classes:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.2/spring-boot-starter-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot/3.2.2/spring-boot-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-context/6.1.3/spring-context-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.2/spring-boot-autoconfigure-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.2/spring-boot-starter-logging-3.2.2.jar:/Users/furkanzengin/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/Users/furkanzengin/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/Users/furkanzengin/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/furkanzengin/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/furkanzengin/.m2/repository/org/slf4j/jul-to-slf4j/2.0.11/jul-to-slf4j-2.0.11.jar:/Users/furkanzengin/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-core/6.1.3/spring-core-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-jcl/6.1.3/spring-jcl-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.2/spring-boot-starter-web-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.2/spring-boot-starter-json-3.2.2.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.2/spring-boot-starter-tomcat-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.18/tomcat-embed-core-10.1.18.jar:/Users/furkanzengin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.18/tomcat-embed-el-10.1.18.jar:/Users/furkanzengin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.18/tomcat-embed-websocket-10.1.18.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-web/6.1.3/spring-web-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-beans/6.1.3/spring-beans-6.1.3.jar:/Users/furkanzengin/.m2/repository/io/micrometer/micrometer-observation/1.12.2/micrometer-observation-1.12.2.jar:/Users/furkanzengin/.m2/repository/io/micrometer/micrometer-commons/1.12.2/micrometer-commons-1.12.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-webmvc/6.1.3/spring-webmvc-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-expression/6.1.3/spring-expression-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.2/spring-boot-starter-test-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-test/3.2.2/spring-boot-test-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.2/spring-boot-test-autoconfigure-3.2.2.jar:/Users/furkanzengin/.m2/repository/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar:/Users/furkanzengin/.m2/repository/org/slf4j/slf4j-api/2.0.11/slf4j-api-2.0.11.jar:/Users/furkanzengin/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/furkanzengin/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/furkanzengin/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/furkanzengin/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/furkanzengin/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/furkanzengin/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/furkanzengin/.m2/repository/net/bytebuddy/byte-buddy/1.14.11/byte-buddy-1.14.11.jar:/Users/furkanzengin/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/furkanzengin/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/furkanzengin/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/furkanzengin/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/furkanzengin/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/furkanzengin/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/furkanzengin/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/furkanzengin/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/furkanzengin/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/furkanzengin/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/furkanzengin/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/furkanzengin/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.11/byte-buddy-agent-1.14.11.jar:/Users/furkanzengin/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/furkanzengin/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/furkanzengin/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/furkanzengin/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-test/6.1.3/spring-test-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/furkanzengin/.m2/repository/org/fzengin/RouteDataServiceLib/1.0.1/RouteDataServiceLib-1.0.1.jar:/Users/furkanzengin/.m2/repository/org/fzengin/RouteRepositoryLib/1.0.1/RouteRepositoryLib-1.0.1.jar:/Users/furkanzengin/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/furkanzengin/.m2/repository/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar:/Users/furkanzengin/.m2/repository/mysql/mysql-connector-java/8.0.28/mysql-connector-java-8.0.28.jar:/Users/furkanzengin/.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar:/Users/furkanzengin/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.0.Final/hibernate-validator-8.0.0.Final.jar:/Users/furkanzengin/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/Users/furkanzengin/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/furkanzengin/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.1.0/springdoc-openapi-starter-webmvc-ui-2.1.0.jar:/Users/furkanzengin/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.1.0/springdoc-openapi-starter-webmvc-api-2.1.0.jar:/Users/furkanzengin/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.1.0/springdoc-openapi-starter-common-2.1.0.jar:/Users/furkanzengin/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.9/swagger-core-jakarta-2.2.9.jar:/Users/furkanzengin/.m2/repository/org/apache/commons/commons-lang3/3.13.0/commons-lang3-3.13.0.jar:/Users/furkanzengin/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.9/swagger-annotations-jakarta-2.2.9.jar:/Users/furkanzengin/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.9/swagger-models-jakarta-2.2.9.jar:/Users/furkanzengin/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.3/jackson-dataformat-yaml-2.15.3.jar:/Users/furkanzengin/.m2/repository/org/webjars/swagger-ui/4.18.2/swagger-ui-4.18.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.2/spring-boot-starter-aop-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-aop/6.1.3/spring-aop-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar:/Users/furkanzengin/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.2/spring-boot-starter-data-jpa-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.2/spring-boot-starter-jdbc-3.2.2.jar:/Users/furkanzengin/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-jdbc/6.1.3/spring-jdbc-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.jar:/Users/furkanzengin/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/furkanzengin/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/furkanzengin/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/Users/furkanzengin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar:/Users/furkanzengin/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar:/Users/furkanzengin/.m2/repository/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar:/Users/furkanzengin/.m2/repository/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar:/Users/furkanzengin/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/furkanzengin/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/furkanzengin/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/furkanzengin/.m2/repository/org/springframework/data/spring-data-jpa/3.2.2/spring-data-jpa-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/data/spring-data-commons/3.2.2/spring-data-commons-3.2.2.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-orm/6.1.3/spring-orm-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-tx/6.1.3/spring-tx-6.1.3.jar:/Users/furkanzengin/.m2/repository/org/springframework/spring-aspects/6.1.3/spring-aspects-6.1.3.jar:/Users/furkanzengin/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/furkanzengin/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/furkanzengin"/>
+    <property name="user.language" value="tr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-01-17"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp/target/surefire/surefirebooter-20250305021847071_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="19.0.2+7-44"/>
+    <property name="user.name" value="furkanzengin"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.5"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/furkanzengin/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/n1/0185gfss079blqy8s7scw6640000gn/T/"/>
+    <property name="idea.version" value="2022.3.2"/>
+    <property name="com.zaxxer.hikari.pool_number" value="4"/>
+    <property name="java.version" value="19.0.2"/>
+    <property name="user.dir" value="/Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="12865"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/furkanzengin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="19.0.2+7-44"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="63.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[Application-Maven-Web] "/>
+  </properties>
+  <testcase name="testForNotValidDate" classname="org.fzengin.app.route.application.RouteAppValidRouteControllerTest" time="0.603">
+    <system-out><![CDATA[2025-03-05T02:18:49.927+03:00  INFO 12865 --- [Application-Maven-Web] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.fzengin.app.route.application.RouteAppValidRouteControllerTest]: RouteAppValidRouteControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-03-05T02:18:49.930+03:00  INFO 12865 --- [Application-Maven-Web] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.fzengin.app.route.application.App for test class org.fzengin.app.route.application.RouteAppValidRouteControllerTest
+
+   _____  _____ _____  
+  / ____|/ ____|  __ \ 
+ | |    | (___ | |  | |
+ | |     \___ \| |  | |
+ | |____ ____) | |__| |
+  \_____|_____/|_____/ 
+                       
+                       
+
+2025-03-05T02:18:49.943+03:00  INFO 12865 --- [Application-Maven-Web] [           main] f.a.r.a.RouteAppValidRouteControllerTest : Starting RouteAppValidRouteControllerTest using Java 19.0.2 with PID 12865 (started by furkanzengin in /Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp)
+2025-03-05T02:18:49.943+03:00  INFO 12865 --- [Application-Maven-Web] [           main] f.a.r.a.RouteAppValidRouteControllerTest : No active profile set, falling back to 1 default profile: "default"
+2025-03-05T02:18:49.998+03:00  INFO 12865 --- [Application-Maven-Web] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-05T02:18:49.999+03:00  INFO 12865 --- [Application-Maven-Web] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 2 JPA repository interfaces.
+2025-03-05T02:18:50.066+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-05T02:18:50.067+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-03-05T02:18:50.146+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-03-05T02:18:50.146+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+Hibernate: 
+    drop table if exists locations cascade 
+Hibernate: 
+    drop table if exists transportations cascade 
+Hibernate: 
+    create table locations (
+        id integer generated by default as identity,
+        location_code varchar(10) not null,
+        country varchar(100) not null,
+        name varchar(100) not null,
+        primary key (id),
+        unique (name, location_code)
+    )
+Hibernate: 
+    create table transportations (
+        destination_location_id integer,
+        id integer generated by default as identity,
+        operating_day_bit_mask integer not null,
+        origin_location_id integer,
+        transportation_type varchar(25) not null,
+        primary key (id)
+    )
+Hibernate: 
+    alter table if exists transportations 
+       add constraint FKmks1unqdajlo4yl56p676owsa 
+       foreign key (destination_location_id) 
+       references locations
+Hibernate: 
+    alter table if exists transportations 
+       add constraint FK86r0wi83ehp0ajr0a2knmtxt5 
+       foreign key (origin_location_id) 
+       references locations
+2025-03-05T02:18:50.196+03:00  INFO 12865 --- [Application-Maven-Web] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-05T02:18:50.302+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: SwaggerConfig.openAPI()
+2025-03-05T02:18:50.302+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: SwaggerConfig.openAPI() with value class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Flight Routes API
+        description: API for finding available flight routes
+        summary: null
+        termsOfService: null
+        contact: class Contact {
+            name: Furkan Zengin
+            url:   
+            email: furkan_zenginn_@hotmail.com
+        }
+        license: class License {
+            name: Apache 2.0
+            url: http://www.apache.org/licenses/LICENSE-2.0.html
+            identifier: null
+        }
+        version: 1.0.0
+    }
+    externalDocs: null
+    servers: [class Server {
+        url: http://localhost:8080
+        description: Development Server
+        variables: null
+    }]
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+2025-03-05T02:18:50.371+03:00  WARN 12865 --- [Application-Maven-Web] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-05T02:18:50.385+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: WebConfig.addCorsMappings(..)
+2025-03-05T02:18:50.385+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: WebConfig.addCorsMappings(..) with value null
+2025-03-05T02:18:50.556+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-05T02:18:50.556+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T02:18:50.557+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T02:18:50.562+03:00  INFO 12865 --- [Application-Maven-Web] [           main] f.a.r.a.RouteAppValidRouteControllerTest : Started RouteAppValidRouteControllerTest in 0.63 seconds (process running for 3.452)
+2025-03-05T02:18:50.565+03:00  INFO 12865 --- [Application-Maven-Web] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: 
+    drop table if exists locations cascade 
+Hibernate: 
+    drop table if exists transportations cascade 
+2025-03-05T02:18:50.567+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-03-05T02:18:50.568+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+   _____  _____ _____  
+  / ____|/ ____|  __ \ 
+ | |    | (___ | |  | |
+ | |     \___ \| |  | |
+ | |____ ____) | |__| |
+  \_____|_____/|_____/ 
+                       
+                       
+
+2025-03-05T02:18:50.578+03:00  INFO 12865 --- [Application-Maven-Web] [           main] f.a.r.a.RouteAppValidRouteControllerTest : Starting RouteAppValidRouteControllerTest using Java 19.0.2 with PID 12865 (started by furkanzengin in /Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp)
+2025-03-05T02:18:50.578+03:00  INFO 12865 --- [Application-Maven-Web] [           main] f.a.r.a.RouteAppValidRouteControllerTest : No active profile set, falling back to 1 default profile: "default"
+2025-03-05T02:18:50.618+03:00  INFO 12865 --- [Application-Maven-Web] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-05T02:18:50.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 2 JPA repository interfaces.
+2025-03-05T02:18:50.680+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-05T02:18:50.680+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-03-05T02:18:50.681+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn2: url=jdbc:h2:mem:testdb user=SA
+2025-03-05T02:18:50.681+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+Hibernate: 
+    drop table if exists locations cascade 
+Hibernate: 
+    drop table if exists transportations cascade 
+Hibernate: 
+    create table locations (
+        id integer generated by default as identity,
+        location_code varchar(10) not null,
+        country varchar(100) not null,
+        name varchar(100) not null,
+        primary key (id),
+        unique (name, location_code)
+    )
+Hibernate: 
+    create table transportations (
+        destination_location_id integer,
+        id integer generated by default as identity,
+        operating_day_bit_mask integer not null,
+        origin_location_id integer,
+        transportation_type varchar(25) not null,
+        primary key (id)
+    )
+Hibernate: 
+    alter table if exists transportations 
+       add constraint FKmks1unqdajlo4yl56p676owsa 
+       foreign key (destination_location_id) 
+       references locations
+Hibernate: 
+    alter table if exists transportations 
+       add constraint FK86r0wi83ehp0ajr0a2knmtxt5 
+       foreign key (origin_location_id) 
+       references locations
+2025-03-05T02:18:50.702+03:00  INFO 12865 --- [Application-Maven-Web] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-05T02:18:50.786+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: SwaggerConfig.openAPI()
+2025-03-05T02:18:50.786+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: SwaggerConfig.openAPI() with value class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Flight Routes API
+        description: API for finding available flight routes
+        summary: null
+        termsOfService: null
+        contact: class Contact {
+            name: Furkan Zengin
+            url:   
+            email: furkan_zenginn_@hotmail.com
+        }
+        license: class License {
+            name: Apache 2.0
+            url: http://www.apache.org/licenses/LICENSE-2.0.html
+            identifier: null
+        }
+        version: 1.0.0
+    }
+    externalDocs: null
+    servers: [class Server {
+        url: http://localhost:8080
+        description: Development Server
+        variables: null
+    }]
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+2025-03-05T02:18:50.847+03:00  WARN 12865 --- [Application-Maven-Web] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-05T02:18:50.858+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: WebConfig.addCorsMappings(..)
+2025-03-05T02:18:50.858+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: WebConfig.addCorsMappings(..) with value null
+2025-03-05T02:18:50.996+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-05T02:18:50.996+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T02:18:50.997+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-03-05T02:18:51.001+03:00  INFO 12865 --- [Application-Maven-Web] [           main] f.a.r.a.RouteAppValidRouteControllerTest : Started RouteAppValidRouteControllerTest in 0.432 seconds (process running for 3.892)
+2025-03-05T02:18:51.006+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.saveLocation(..)
+2025-03-05T02:18:51.006+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..)
+2025-03-05T02:18:51.006+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findByNameOrLocationCode(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.name=? 
+        or l1_0.location_code=?
+2025-03-05T02:18:51.040+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.040+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.040+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocation(..)
+2025-03-05T02:18:51.040+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocation(..) with value org.fzengin.app.route.repository.entity.Location@0
+2025-03-05T02:18:51.040+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.saveLocation(..)
+2025-03-05T02:18:51.042+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        locations
+        (country, location_code, name, id) 
+    values
+        (?, ?, ?, default)
+2025-03-05T02:18:51.054+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Location@1
+2025-03-05T02:18:51.054+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.saveLocation(..) with value org.fzengin.app.route.repository.entity.Location@1
+2025-03-05T02:18:51.054+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.054+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@32030a76
+2025-03-05T02:18:51.054+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.saveLocation(..) with value org.fzengin.app.route.data.dto.LocationDto@32030a76
+2025-03-05T02:18:51.057+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.saveLocation(..)
+2025-03-05T02:18:51.057+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..)
+2025-03-05T02:18:51.057+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findByNameOrLocationCode(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.name=? 
+        or l1_0.location_code=?
+2025-03-05T02:18:51.058+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.058+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.058+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocation(..)
+2025-03-05T02:18:51.058+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocation(..) with value org.fzengin.app.route.repository.entity.Location@0
+2025-03-05T02:18:51.058+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.saveLocation(..)
+2025-03-05T02:18:51.058+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        locations
+        (country, location_code, name, id) 
+    values
+        (?, ?, ?, default)
+2025-03-05T02:18:51.058+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Location@2
+2025-03-05T02:18:51.058+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.saveLocation(..) with value org.fzengin.app.route.repository.entity.Location@2
+2025-03-05T02:18:51.058+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.058+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@9dd412c
+2025-03-05T02:18:51.059+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.saveLocation(..) with value org.fzengin.app.route.data.dto.LocationDto@9dd412c
+2025-03-05T02:18:51.059+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.saveLocation(..)
+2025-03-05T02:18:51.059+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..)
+2025-03-05T02:18:51.059+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findByNameOrLocationCode(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.name=? 
+        or l1_0.location_code=?
+2025-03-05T02:18:51.060+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.060+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.060+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocation(..)
+2025-03-05T02:18:51.060+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocation(..) with value org.fzengin.app.route.repository.entity.Location@0
+2025-03-05T02:18:51.060+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.saveLocation(..)
+2025-03-05T02:18:51.060+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        locations
+        (country, location_code, name, id) 
+    values
+        (?, ?, ?, default)
+2025-03-05T02:18:51.061+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Location@3
+2025-03-05T02:18:51.061+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.saveLocation(..) with value org.fzengin.app.route.repository.entity.Location@3
+2025-03-05T02:18:51.061+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.061+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@741f0e03
+2025-03-05T02:18:51.061+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.saveLocation(..) with value org.fzengin.app.route.data.dto.LocationDto@741f0e03
+2025-03-05T02:18:51.061+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.saveLocation(..)
+2025-03-05T02:18:51.061+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..)
+2025-03-05T02:18:51.061+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findByNameOrLocationCode(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.name=? 
+        or l1_0.location_code=?
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocation(..)
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocation(..) with value org.fzengin.app.route.repository.entity.Location@0
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.saveLocation(..)
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        locations
+        (country, location_code, name, id) 
+    values
+        (?, ?, ?, default)
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Location@4
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.saveLocation(..) with value org.fzengin.app.route.repository.entity.Location@4
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@fa7c7159
+2025-03-05T02:18:51.062+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.saveLocation(..) with value org.fzengin.app.route.data.dto.LocationDto@fa7c7159
+2025-03-05T02:18:51.063+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.findLocationByLocationName(..)
+2025-03-05T02:18:51.063+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.063+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.081+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.081+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.081+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.081+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@9dd412c
+2025-03-05T02:18:51.081+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.findLocationByLocationName(..) with value Optional[org.fzengin.app.route.data.dto.LocationDto@9dd412c]
+2025-03-05T02:18:51.081+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.findLocationByLocationName(..)
+2025-03-05T02:18:51.081+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.081+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.082+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.082+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.082+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.082+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@32030a76
+2025-03-05T02:18:51.082+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.findLocationByLocationName(..) with value Optional[org.fzengin.app.route.data.dto.LocationDto@32030a76]
+2025-03-05T02:18:51.082+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.findLocationByLocationName(..)
+2025-03-05T02:18:51.082+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.082+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.083+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.083+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.083+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.083+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@741f0e03
+2025-03-05T02:18:51.083+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.findLocationByLocationName(..) with value Optional[org.fzengin.app.route.data.dto.LocationDto@741f0e03]
+2025-03-05T02:18:51.083+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.findLocationByLocationName(..)
+2025-03-05T02:18:51.083+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.083+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.084+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.084+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.084+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.084+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@fa7c7159
+2025-03-05T02:18:51.084+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.findLocationByLocationName(..) with value Optional[org.fzengin.app.route.data.dto.LocationDto@fa7c7159]
+2025-03-05T02:18:51.084+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.084+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.084+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.085+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.085+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.085+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.085+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.086+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.086+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.086+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.086+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.087+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.087+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.088+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@1
+2025-03-05T02:18:51.088+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@1
+2025-03-05T02:18:51.088+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.089+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@29ad358c
+2025-03-05T02:18:51.089+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@29ad358c
+2025-03-05T02:18:51.089+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.089+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.089+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.089+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.089+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.089+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.089+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.090+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.090+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.090+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.090+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.090+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.090+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.091+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@2
+2025-03-05T02:18:51.091+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@2
+2025-03-05T02:18:51.091+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.091+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@65a610f7
+2025-03-05T02:18:51.091+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@65a610f7
+2025-03-05T02:18:51.091+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.091+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.091+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.092+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.092+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.092+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.092+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.093+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.093+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.093+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.093+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.093+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.093+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.095+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@3
+2025-03-05T02:18:51.095+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@3
+2025-03-05T02:18:51.095+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.095+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@68d57037
+2025-03-05T02:18:51.095+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@68d57037
+2025-03-05T02:18:51.095+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.095+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.095+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.096+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.096+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.096+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.096+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@4
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@4
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@2248583e
+2025-03-05T02:18:51.097+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@2248583e
+2025-03-05T02:18:51.098+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.098+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.098+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.098+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.098+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.098+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.098+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@5
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@5
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@7aff1fa3
+2025-03-05T02:18:51.099+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@7aff1fa3
+2025-03-05T02:18:51.100+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.100+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.100+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.100+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.100+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.100+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.100+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.101+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.101+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.101+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.101+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.101+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.101+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.101+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@6
+2025-03-05T02:18:51.101+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@6
+2025-03-05T02:18:51.101+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.101+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@1d021496
+2025-03-05T02:18:51.102+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@1d021496
+2025-03-05T02:18:51.124+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppValidRouteController.getTransportationById(..)
+2025-03-05T02:18:51.124+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppValidRouteService.findValidRoutes(..)
+2025-03-05T02:18:51.124+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.124+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.125+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.125+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.126+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.126+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.127+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.127+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.127+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..)
+2025-03-05T02:18:51.128+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationRepository.findAllByOriginLocationName(..)
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.destination_location_id,
+        t1_0.operating_day_bit_mask,
+        t1_0.origin_location_id,
+        t1_0.transportation_type 
+    from
+        transportations t1_0 
+    left join
+        locations ol1_0 
+            on ol1_0.id=t1_0.origin_location_id 
+    where
+        ol1_0.name=?
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.133+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationRepository.findAllByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@3, org.fzengin.app.route.repository.entity.Transportation@5]
+2025-03-05T02:18:51.133+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@3, org.fzengin.app.route.repository.entity.Transportation@5]
+2025-03-05T02:18:51.134+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.134+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 2, 3, 4, 5, 6, 7]
+2025-03-05T02:18:51.134+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.134+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 2, 3, 4, 5, 6, 7]
+2025-03-05T02:18:51.134+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.134+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 2, 3, 4, 5, 6, 7]
+2025-03-05T02:18:51.134+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..)
+2025-03-05T02:18:51.134+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationRepository.findAllByOriginLocationName(..)
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.destination_location_id,
+        t1_0.operating_day_bit_mask,
+        t1_0.origin_location_id,
+        t1_0.transportation_type 
+    from
+        transportations t1_0 
+    left join
+        locations ol1_0 
+            on ol1_0.id=t1_0.origin_location_id 
+    where
+        ol1_0.name=?
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.135+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationRepository.findAllByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@1]
+2025-03-05T02:18:51.135+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@1]
+2025-03-05T02:18:51.135+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.135+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 4, 7]
+2025-03-05T02:18:51.135+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppValidRouteService.findValidRoutes(..) with value []
+2025-03-05T02:18:51.137+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppValidRouteController.getTransportationById(..) with value <404 NOT_FOUND Not Found,org.fzengin.app.route.application.apiresponse.ApiResponse@2eb4a3ec,[]>
+]]></system-out>
+  </testcase>
+  <testcase name="testForValidDate" classname="org.fzengin.app.route.application.RouteAppValidRouteControllerTest" time="0.477">
+    <system-out><![CDATA[2025-03-05T02:18:51.168+03:00  INFO 12865 --- [Application-Maven-Web] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: 
+    drop table if exists locations cascade 
+Hibernate: 
+    drop table if exists transportations cascade 
+2025-03-05T02:18:51.169+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-03-05T02:18:51.170+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+
+   _____  _____ _____  
+  / ____|/ ____|  __ \ 
+ | |    | (___ | |  | |
+ | |     \___ \| |  | |
+ | |____ ____) | |__| |
+  \_____|_____/|_____/ 
+                       
+                       
+
+2025-03-05T02:18:51.179+03:00  INFO 12865 --- [Application-Maven-Web] [           main] f.a.r.a.RouteAppValidRouteControllerTest : Starting RouteAppValidRouteControllerTest using Java 19.0.2 with PID 12865 (started by furkanzengin in /Users/furkanzengin/Furkan/Programming/thy/AvaliableFlightRouteProject/flight-routes-backend/RouteFindingApp)
+2025-03-05T02:18:51.179+03:00  INFO 12865 --- [Application-Maven-Web] [           main] f.a.r.a.RouteAppValidRouteControllerTest : No active profile set, falling back to 1 default profile: "default"
+2025-03-05T02:18:51.221+03:00  INFO 12865 --- [Application-Maven-Web] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-05T02:18:51.223+03:00  INFO 12865 --- [Application-Maven-Web] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 2 JPA repository interfaces.
+2025-03-05T02:18:51.279+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-05T02:18:51.279+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-03-05T02:18:51.280+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn4: url=jdbc:h2:mem:testdb user=SA
+2025-03-05T02:18:51.280+03:00  INFO 12865 --- [Application-Maven-Web] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+Hibernate: 
+    drop table if exists locations cascade 
+Hibernate: 
+    drop table if exists transportations cascade 
+Hibernate: 
+    create table locations (
+        id integer generated by default as identity,
+        location_code varchar(10) not null,
+        country varchar(100) not null,
+        name varchar(100) not null,
+        primary key (id),
+        unique (name, location_code)
+    )
+Hibernate: 
+    create table transportations (
+        destination_location_id integer,
+        id integer generated by default as identity,
+        operating_day_bit_mask integer not null,
+        origin_location_id integer,
+        transportation_type varchar(25) not null,
+        primary key (id)
+    )
+Hibernate: 
+    alter table if exists transportations 
+       add constraint FKmks1unqdajlo4yl56p676owsa 
+       foreign key (destination_location_id) 
+       references locations
+Hibernate: 
+    alter table if exists transportations 
+       add constraint FK86r0wi83ehp0ajr0a2knmtxt5 
+       foreign key (origin_location_id) 
+       references locations
+2025-03-05T02:18:51.300+03:00  INFO 12865 --- [Application-Maven-Web] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-05T02:18:51.390+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: SwaggerConfig.openAPI()
+2025-03-05T02:18:51.390+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: SwaggerConfig.openAPI() with value class OpenAPI {
+    openapi: 3.0.1
+    info: class Info {
+        title: Flight Routes API
+        description: API for finding available flight routes
+        summary: null
+        termsOfService: null
+        contact: class Contact {
+            name: Furkan Zengin
+            url:   
+            email: furkan_zenginn_@hotmail.com
+        }
+        license: class License {
+            name: Apache 2.0
+            url: http://www.apache.org/licenses/LICENSE-2.0.html
+            identifier: null
+        }
+        version: 1.0.0
+    }
+    externalDocs: null
+    servers: [class Server {
+        url: http://localhost:8080
+        description: Development Server
+        variables: null
+    }]
+    security: null
+    tags: null
+    paths: null
+    components: null
+}
+2025-03-05T02:18:51.445+03:00  WARN 12865 --- [Application-Maven-Web] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-05T02:18:51.456+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: WebConfig.addCorsMappings(..)
+2025-03-05T02:18:51.456+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: WebConfig.addCorsMappings(..) with value null
+2025-03-05T02:18:51.591+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-03-05T02:18:51.591+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-03-05T02:18:51.592+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-03-05T02:18:51.596+03:00  INFO 12865 --- [Application-Maven-Web] [           main] f.a.r.a.RouteAppValidRouteControllerTest : Started RouteAppValidRouteControllerTest in 0.425 seconds (process running for 4.487)
+2025-03-05T02:18:51.598+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.saveLocation(..)
+2025-03-05T02:18:51.598+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..)
+2025-03-05T02:18:51.598+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findByNameOrLocationCode(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.name=? 
+        or l1_0.location_code=?
+2025-03-05T02:18:51.600+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.600+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.601+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocation(..)
+2025-03-05T02:18:51.601+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocation(..) with value org.fzengin.app.route.repository.entity.Location@0
+2025-03-05T02:18:51.601+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.saveLocation(..)
+2025-03-05T02:18:51.602+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        locations
+        (country, location_code, name, id) 
+    values
+        (?, ?, ?, default)
+2025-03-05T02:18:51.603+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Location@1
+2025-03-05T02:18:51.603+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.saveLocation(..) with value org.fzengin.app.route.repository.entity.Location@1
+2025-03-05T02:18:51.603+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.603+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@32030a76
+2025-03-05T02:18:51.603+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.saveLocation(..) with value org.fzengin.app.route.data.dto.LocationDto@32030a76
+2025-03-05T02:18:51.603+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.saveLocation(..)
+2025-03-05T02:18:51.603+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..)
+2025-03-05T02:18:51.603+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findByNameOrLocationCode(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.name=? 
+        or l1_0.location_code=?
+2025-03-05T02:18:51.604+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.604+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.604+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocation(..)
+2025-03-05T02:18:51.604+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocation(..) with value org.fzengin.app.route.repository.entity.Location@0
+2025-03-05T02:18:51.604+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.saveLocation(..)
+2025-03-05T02:18:51.604+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        locations
+        (country, location_code, name, id) 
+    values
+        (?, ?, ?, default)
+2025-03-05T02:18:51.605+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Location@2
+2025-03-05T02:18:51.605+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.saveLocation(..) with value org.fzengin.app.route.repository.entity.Location@2
+2025-03-05T02:18:51.605+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.605+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@9dd412c
+2025-03-05T02:18:51.605+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.saveLocation(..) with value org.fzengin.app.route.data.dto.LocationDto@9dd412c
+2025-03-05T02:18:51.605+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.saveLocation(..)
+2025-03-05T02:18:51.605+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..)
+2025-03-05T02:18:51.605+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findByNameOrLocationCode(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.name=? 
+        or l1_0.location_code=?
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocation(..)
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocation(..) with value org.fzengin.app.route.repository.entity.Location@0
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.saveLocation(..)
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        locations
+        (country, location_code, name, id) 
+    values
+        (?, ?, ?, default)
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Location@3
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.saveLocation(..) with value org.fzengin.app.route.repository.entity.Location@3
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@741f0e03
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.saveLocation(..) with value org.fzengin.app.route.data.dto.LocationDto@741f0e03
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.saveLocation(..)
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..)
+2025-03-05T02:18:51.606+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findByNameOrLocationCode(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.name=? 
+        or l1_0.location_code=?
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByNameOrLocationCode(..) with value []
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocation(..)
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocation(..) with value org.fzengin.app.route.repository.entity.Location@0
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.saveLocation(..)
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        locations
+        (country, location_code, name, id) 
+    values
+        (?, ?, ?, default)
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Location@4
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.saveLocation(..) with value org.fzengin.app.route.repository.entity.Location@4
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@fa7c7159
+2025-03-05T02:18:51.607+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.saveLocation(..) with value org.fzengin.app.route.data.dto.LocationDto@fa7c7159
+2025-03-05T02:18:51.608+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.findLocationByLocationName(..)
+2025-03-05T02:18:51.608+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.608+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.609+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.609+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.609+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.609+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@9dd412c
+2025-03-05T02:18:51.609+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.findLocationByLocationName(..) with value Optional[org.fzengin.app.route.data.dto.LocationDto@9dd412c]
+2025-03-05T02:18:51.609+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.findLocationByLocationName(..)
+2025-03-05T02:18:51.609+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.609+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.610+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.610+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.610+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.610+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@32030a76
+2025-03-05T02:18:51.610+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.findLocationByLocationName(..) with value Optional[org.fzengin.app.route.data.dto.LocationDto@32030a76]
+2025-03-05T02:18:51.610+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.findLocationByLocationName(..)
+2025-03-05T02:18:51.610+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.610+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.611+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.611+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.611+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.611+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@741f0e03
+2025-03-05T02:18:51.611+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.findLocationByLocationName(..) with value Optional[org.fzengin.app.route.data.dto.LocationDto@741f0e03]
+2025-03-05T02:18:51.611+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationDataService.findLocationByLocationName(..)
+2025-03-05T02:18:51.611+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.611+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.612+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.612+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.612+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationMapperImpl.toLocationDto(..)
+2025-03-05T02:18:51.612+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationMapperImpl.toLocationDto(..) with value org.fzengin.app.route.data.dto.LocationDto@fa7c7159
+2025-03-05T02:18:51.612+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationDataService.findLocationByLocationName(..) with value Optional[org.fzengin.app.route.data.dto.LocationDto@fa7c7159]
+2025-03-05T02:18:51.612+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.612+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.612+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.613+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.613+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.613+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.613+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.613+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.614+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.614+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.614+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.614+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.614+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@1
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@1
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@eb87c61
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@eb87c61
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.615+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.616+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.616+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.616+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.616+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.616+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.616+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.616+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@2
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@2
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@6f3d6bb2
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@6f3d6bb2
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.617+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.618+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.618+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.618+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.618+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.618+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.618+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@3
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@3
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@19ea1606
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@19ea1606
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@1]
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.619+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.620+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.620+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.620+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.620+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.620+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.620+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.620+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@4
+2025-03-05T02:18:51.620+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@4
+2025-03-05T02:18:51.620+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.620+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@1248ac5d
+2025-03-05T02:18:51.621+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@1248ac5d
+2025-03-05T02:18:51.621+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.621+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.621+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.621+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.621+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.621+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.621+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@2]
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@5
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@5
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@1a5cb2b3
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@1a5cb2b3
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationDataService.saveTransportation(..)
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.622+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.623+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.623+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.623+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationById(..)
+2025-03-05T02:18:51.623+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationById(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.623+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.623+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationById(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.623+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportation(..)
+2025-03-05T02:18:51.623+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@0
+2025-03-05T02:18:51.624+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.saveTransportation(..)
+2025-03-05T02:18:51.624+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: CrudRepository.save(..)
+Hibernate: 
+    insert 
+    into
+        transportations
+        (destination_location_id, operating_day_bit_mask, origin_location_id, transportation_type, id) 
+    values
+        (?, ?, ?, ?, default)
+2025-03-05T02:18:51.624+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: CrudRepository.save(..) with value org.fzengin.app.route.repository.entity.Transportation@6
+2025-03-05T02:18:51.624+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.saveTransportation(..) with value org.fzengin.app.route.repository.entity.Transportation@6
+2025-03-05T02:18:51.624+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.624+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@3131c0d8
+2025-03-05T02:18:51.624+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationDataService.saveTransportation(..) with value org.fzengin.app.route.data.dto.TransportationDto@3131c0d8
+2025-03-05T02:18:51.626+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppValidRouteController.getTransportationById(..)
+2025-03-05T02:18:51.626+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppValidRouteService.findValidRoutes(..)
+2025-03-05T02:18:51.626+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.626+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.627+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.627+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@3]
+2025-03-05T02:18:51.628+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppLocationRepositoryHelper.findLocationByName(..)
+2025-03-05T02:18:51.628+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: LocationRepository.findLocationByNameIgnoreCase(..)
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        upper(l1_0.name)=upper(?)
+2025-03-05T02:18:51.628+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: LocationRepository.findLocationByNameIgnoreCase(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.628+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppLocationRepositoryHelper.findLocationByName(..) with value Optional[org.fzengin.app.route.repository.entity.Location@4]
+2025-03-05T02:18:51.628+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..)
+2025-03-05T02:18:51.628+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationRepository.findAllByOriginLocationName(..)
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.destination_location_id,
+        t1_0.operating_day_bit_mask,
+        t1_0.origin_location_id,
+        t1_0.transportation_type 
+    from
+        transportations t1_0 
+    left join
+        locations ol1_0 
+            on ol1_0.id=t1_0.origin_location_id 
+    where
+        ol1_0.name=?
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.629+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationRepository.findAllByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@3, org.fzengin.app.route.repository.entity.Transportation@5]
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@3, org.fzengin.app.route.repository.entity.Transportation@5]
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 2, 3, 4, 5, 6, 7]
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 2, 3, 4, 5, 6, 7]
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 2, 3, 4, 5, 6, 7]
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..)
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationRepository.findAllByOriginLocationName(..)
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.destination_location_id,
+        t1_0.operating_day_bit_mask,
+        t1_0.origin_location_id,
+        t1_0.transportation_type 
+    from
+        transportations t1_0 
+    left join
+        locations ol1_0 
+            on ol1_0.id=t1_0.origin_location_id 
+    where
+        ol1_0.name=?
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.country,
+        l1_0.location_code,
+        l1_0.name 
+    from
+        locations l1_0 
+    where
+        l1_0.id=?
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationRepository.findAllByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@1]
+2025-03-05T02:18:51.630+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@1]
+2025-03-05T02:18:51.631+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.631+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 4, 7]
+2025-03-05T02:18:51.631+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..)
+2025-03-05T02:18:51.631+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationRepository.findAllByOriginLocationName(..)
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.destination_location_id,
+        t1_0.operating_day_bit_mask,
+        t1_0.origin_location_id,
+        t1_0.transportation_type 
+    from
+        transportations t1_0 
+    left join
+        locations ol1_0 
+            on ol1_0.id=t1_0.origin_location_id 
+    where
+        ol1_0.name=?
+2025-03-05T02:18:51.631+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationRepository.findAllByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@2, org.fzengin.app.route.repository.entity.Transportation@4]
+2025-03-05T02:18:51.631+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@2, org.fzengin.app.route.repository.entity.Transportation@4]
+2025-03-05T02:18:51.631+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.631+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 2, 4, 5, 7]
+2025-03-05T02:18:51.631+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..)
+2025-03-05T02:18:51.631+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationRepository.findAllByOriginLocationName(..)
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.destination_location_id,
+        t1_0.operating_day_bit_mask,
+        t1_0.origin_location_id,
+        t1_0.transportation_type 
+    from
+        transportations t1_0 
+    left join
+        locations ol1_0 
+            on ol1_0.id=t1_0.origin_location_id 
+    where
+        ol1_0.name=?
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationRepository.findAllByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@1]
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppTransportationRepositoryHelper.findTransportationsByOriginLocationName(..) with value [org.fzengin.app.route.repository.entity.Transportation@1]
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 4, 7]
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 2, 4, 5, 7]
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 2, 3, 4, 5, 6, 7]
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 4, 7]
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapper.convertBitwiseToDays(..)
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapper.convertBitwiseToDays(..) with value [1, 2, 4, 5, 7]
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@56dc6b33
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@31373fc1
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method called: TransportationMapperImpl.toTransportationDto(..)
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: TransportationMapperImpl.toTransportationDto(..) with value org.fzengin.app.route.data.dto.TransportationDto@44b3d336
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppValidRouteService.findValidRoutes(..) with value [org.fzengin.app.route.data.dto.ValidRouteDto@43bc1d67]
+2025-03-05T02:18:51.632+03:00  INFO 12865 --- [Application-Maven-Web] [           main] o.f.a.r.a.config.LoggingAspect           : Method returned: RouteAppValidRouteController.getTransportationById(..) with value <200 OK OK,org.fzengin.app.route.application.apiresponse.ApiResponse@760c63d0,[]>
+]]></system-out>
+  </testcase>
+</testsuite>

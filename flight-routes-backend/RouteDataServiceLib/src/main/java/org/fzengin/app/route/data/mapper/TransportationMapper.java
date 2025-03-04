@@ -14,15 +14,17 @@ import java.util.stream.Collectors;
 public interface TransportationMapper {
 
     @Mapping(source = "id", target = "id")
-    @Mapping(source = "originLocation", target = "originLocation.name")
-    @Mapping(source = "destinationLocation", target = "destinationLocation.name")
+    @Mapping(source = "originLocationId", target = "originLocation.id")
+    @Mapping(source = "destinationLocationId", target = "destinationLocation.id")
     @Mapping(source = "transportationType", target = "transportationType")
     @Mapping(source = "operationDays", target = "operatingDayBitMask", qualifiedByName = "convertDaysToBitwise")
     Transportation toTransportation(TransportationDto transportationDto);
 
     @Mapping(source = "id", target = "id")
-    @Mapping(source = "originLocation.name", target = "originLocation")
-    @Mapping(source = "destinationLocation.name", target = "destinationLocation")
+    @Mapping(source = "originLocation.id", target = "originLocationId")
+    @Mapping(source = "destinationLocation.id", target = "destinationLocationId")
+    @Mapping(source = "originLocation.name", target = "originLocationName")
+    @Mapping(source = "destinationLocation.name", target = "destinationLocationName")
     @Mapping(source = "transportationType", target = "transportationType")
     @Mapping(source = "operatingDayBitMask", target = "operationDays", qualifiedByName = "convertBitwiseToDays")
     TransportationDto toTransportationDto(Transportation transportation);
